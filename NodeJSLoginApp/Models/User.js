@@ -9,6 +9,9 @@ Username:{
     Password:{
     type:String
     },
+    Password2:{
+        type:String
+    },
     Name:{
     type:String
     },

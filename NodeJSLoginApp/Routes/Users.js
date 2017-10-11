@@ -17,6 +17,7 @@ var userName=req.body.Username;
 var email=req.body.Email;
 var password=req.body.Password;
 var password2=req.body.Password2;
+console.log("Confirm Password is:"+password2);
 
 req.checkBody('Name','Name is required').notEmpty();
 req.checkBody('Username','Username is required').notEmpty();
@@ -69,7 +70,7 @@ if(err)
 if(!user) {
     return done(null, false, {message: 'Unknown User'});
 }
-User.comparePassword(Password,user.Password,function (err,isMatch) {
+User.comparePassword(password,user.password,function (err,isMatch) {
     if(err)
         throw err;
     if(isMatch){
